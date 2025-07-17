@@ -97,9 +97,9 @@ const App = () => {
         </div>
 
         {/* Display password strength */}
-        <div className='mt-2 text-right text-sm font-bold text-yellow-300'>
+        {password.length>0 && (<div className='mt-2 text-right text-sm font-bold text-yellow-300'>
           <label className='text-blue-400'>Strength:</label> <span className={strength === "Weak" ? 'text-red-400' : strength === "Moderate" ? "text-amber-300" : "text-green-400"}>{strength}</span>
-        </div>
+        </div>)}
 
         // Checkbox options for character types
         <div className='grid grid-cols-2 gap-4 my-6 text-yellow-600'>
