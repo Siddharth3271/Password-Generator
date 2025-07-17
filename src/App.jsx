@@ -1,4 +1,4 @@
-import { Check, Copy, EyeOff } from 'lucide-react'
+import { Check, Copy, Eye, EyeOff } from 'lucide-react'
 import React, { useState } from 'react'
 
 const App = () => {
@@ -6,14 +6,15 @@ const App = () => {
   const [visible, setVisible] = useState(false);
   const [password, setPassword] = useState("");
   const [copy, setCopy] = useState(false);
+  const [strength,setStrength]=useState("Weak");
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(password);
     setCopy(true);
 
     setTimeout(() => {
-
-    })
+      setCopy(false);
+    },2000)
   }
 
   return (
@@ -26,14 +27,18 @@ const App = () => {
 
         <div className='flex w-full items-center space-x-2 bg-gray-700 rounded-lg p-2 border-yellow-300 border'>
 
-          <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} className='flex-1 bg-transparent outline-none text-xl w-1/2 md:w3/4 text-amber-300 font-semibold' />
+          <input type={visible?"text":"password"} value={password} onChange={(e) => setPassword(e.target.value)} className='flex-1 bg-transparent outline-none text-xl w-1/2 md:w3/4 text-amber-300 font-semibold' />
 
           <div className='flex items-center space-x-2'>
 
-            <button className='text-white' onClick={() => setVisible(true)}>{visible ? <Eye /> : <EyeOff />}</button>
-            <button className='text-yellow-200' onClick={copyToClipboard()}>{copy ? <Check /> : <Copy />}</button>
+            <button className='text-white' onClick={() => setVisible(!visible)}>{visible ? <EyeOff/> : <Eye/>}</button>
+            <button className='text-yellow-200' onClick={copyToClipboard}>{copy ? <Check /> : <Copy />}</button>
 
           </div>
+        </div>
+
+        <div className='mt-2 text-right text-sm font-bold text-yellow-300'>
+          Strength: <span className={strength==="Weak"?'text-red-400':strength==="Moderate"?"text-amber-300":"text-green-400"}>{strength}</span>
         </div>
       </div>
 
