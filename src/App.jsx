@@ -49,19 +49,10 @@ const App = () => {
     }
 
     setPassword(password);
+    setShow(true);
     setStrength(calculateStrength(password));
     setVisible(true);
   }
-
-  const [visible, setVisible] = useState(false);
-  const [password, setPassword] = useState("");
-  const [copy, setCopy] = useState(false);
-  const [strength, setStrength] = useState("Weak");
-  const [length, setLength] = useState(8);
-  const [upper, setUpper] = useState(false);
-  const [lower, setLower] = useState(false);
-  const [number, setNumber] = useState(false);
-  const [symbol, setSymbol] = useState(false);
 
   // Function to handle password generation
   const copyToClipboard = () => {
@@ -73,11 +64,23 @@ const App = () => {
     }, 2000)
   }
 
+  const [visible, setVisible] = useState(false);
+  const [password, setPassword] = useState("");
+  const [copy, setCopy] = useState(false);
+  const [strength, setStrength] = useState("Weak");
+  const [length, setLength] = useState(8);
+  const [upper, setUpper] = useState(false);
+  const [lower, setLower] = useState(false);
+  const [number, setNumber] = useState(false);
+  const [symbol, setSymbol] = useState(false);
+  const [show, setShow] = useState(false);
+
+  // Main component render that includes the password generator UI
   return (
     <div className='min-h-screen w-full bg-gray-900 flex flex-col items-center justify-center'>
 
       {/* Password generator box */}
-      <div className='m-2 min-h-[500px] w-full max-w-xl rounded-xl  shadow-lg p-6 border border-yellow-400 mx-2'>
+      <div className='m-2 min-h-lg w-full max-w-xl rounded-xl  shadow-lg p-6 border border-yellow-400 mx-2'>
 
         <h1 className='text-center text-2xl text-yellow-300 font-semibold mb-6'>Classic Password Generator</h1>
 
@@ -85,18 +88,20 @@ const App = () => {
 
           <input type={visible ? "text" : "password"} value={password} readOnly onChange={(e) => setPassword(e.target.value)} className='flex-1 bg-transparent outline-none text-xl w-1/2 md:w3/4 text-amber-300 font-semibold' />
 
-          <div className='flex items-center space-x-2'>
+          {show ? <div className='flex items-center space-x-2'>
 
             <button className='text-white' onClick={() => setVisible(!visible)}>{visible ? <EyeOff /> : <Eye />}</button>
             <button className='text-yellow-200' onClick={copyToClipboard}>{copy ? <Check /> : <Copy />}</button>
 
-          </div>
+          </div> : ""}
         </div>
 
+        {/* Display password strength */}
         <div className='mt-2 text-right text-sm font-bold text-yellow-300'>
           <label className='text-blue-400'>Strength:</label> <span className={strength === "Weak" ? 'text-red-400' : strength === "Moderate" ? "text-amber-300" : "text-green-400"}>{strength}</span>
         </div>
 
+        // Checkbox options for character types
         <div className='grid grid-cols-2 gap-4 my-6 text-yellow-600'>
           <label className='flex items-center gap-2 cursor-pointer'>
             <input type="checkbox" checked={upper} onChange={() => setUpper(!upper)} />UpperCase
@@ -117,7 +122,9 @@ const App = () => {
             <input type="number" value={length} min={4} max={20} onChange={(e) => setLength(e.target.value)} className='w-full p-2 rounded-lg border-2 border-yellow-400 bg-gray-700 text-yellow-100 focus:outline-none focus:ring-2 focus:ring-yellow-400' />
           </label>
         </div>
+
         <button onClick={generatePassword} className='w-full md:mt-8 mt-2 bg-blue-400 text-white font-bold py-2 rounded-lg shadow-md transition-all md:text-2xl text-xl hover:bg-blue-700 cursor-pointer'>Generate Password</button>
+
       </div>
 
     </div>
