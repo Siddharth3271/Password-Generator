@@ -1,12 +1,38 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🔐 Classic Random Password Generator
 
-Currently, two official plugins are available:
+A minimal yet powerful **Random Password Generator** built using **React** and **Tailwind CSS**, allowing users to generate secure and customizable passwords with ease.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ Choose character types: **Uppercase**, **Lowercase**, **Numbers**, **Symbols**
+- ✅ Set password length (4 to 20)
+- ✅ View password in plain text or masked
+- ✅ Copy to clipboard with visual feedback
+- ✅ Real-time **password strength indicator**
+- ✅ Clean UI with Tailwind CSS
+
+![Password Generator Screenshot](src/assets/image.png)
+
+📂 Project Structure
+src/
+├── App.js         # Main application component
+├── index.js       # Entry point
+├── index.css      # TailwindCSS and global styles
+
+🧠 Technologies Used
+
+⚛️ React
+🎨 Tailwind CSS
+📦 lucide-react icons (for UI controls)
+
+# [!Deployed Url](https://password-generator-flax-pi.vercel.app/)
+
+## How to clone it and run on local machine
+
+
+
+
