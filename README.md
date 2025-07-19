@@ -29,9 +29,28 @@ src/
 🎨 Tailwind CSS
 📦 lucide-react icons (for UI controls)
 
-# [!Deployed Url](https://password-generator-flax-pi.vercel.app/)
+![Deployed Url](https://password-generator-flax-pi.vercel.app/)
 
-## How to clone it and run on local machine
+# How to clone it and run on local machine
+
+Make sure the following are installed on your system:
+
+- Node.js (v14 or above)
+- Git
+
+Open your terminal and run:
+
+- git clone https://github.com/Siddharth3271/Password-Generator.git
+- cd Password-Generator
+
+Install Dependencies
+
+- npm install
+
+Start the Development Server
+
+- npm run dev
+
 
 
 
