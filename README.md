@@ -29,7 +29,9 @@ src/
 🎨 Tailwind CSS
 📦 lucide-react icons (for UI controls)
 
-![Deployed Url](https://password-generator-flax-pi.vercel.app/)
+## 🚀 Live Demo
+
+🔗 **[View Live App](https://password-generator-flax-pi.vercel.app/)**
 
 # How to clone it and run on local machine
 
