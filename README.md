@@ -19,9 +19,9 @@ A minimal yet powerful **Random Password Generator** built using **React** and *
 
 📂 Project Structure
 src/
-├── App.js         # Main application component
-├── index.js       # Entry point
-├── index.css      # TailwindCSS and global styles
+- App.js         # Main application component
+- index.js       # Entry point
+- index.css      # TailwindCSS and global styles
 
 🧠 Technologies Used
 
